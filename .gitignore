@@ -1,0 +1,6 @@
+.DS_Store
+*.log
+download_images.sh
+download_gallery.sh
+download_events.sh
+download_fonts.py
