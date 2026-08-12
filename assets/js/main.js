@@ -36,6 +36,19 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.key === 'ArrowRight') open((current + 1) % galleryLinks.length);
       if (e.key === 'ArrowLeft') open((current - 1 + galleryLinks.length) % galleryLinks.length);
     });
+
+    /* --- Swipe gestures (touch) on mobile --- */
+    let touchX = null;
+    lb.addEventListener('touchstart', (e) => { touchX = e.changedTouches[0].clientX; }, { passive: true });
+    lb.addEventListener('touchend', (e) => {
+      if (touchX === null) return;
+      const dx = e.changedTouches[0].clientX - touchX;
+      touchX = null;
+      const threshold = 50; // px: Mindest-Wischweite
+      if (Math.abs(dx) < threshold) return;
+      if (dx < 0) open((current + 1) % galleryLinks.length);                 // nach links wischen → nächstes Bild
+      else open((current - 1 + galleryLinks.length) % galleryLinks.length); // nach rechts wischen → vorheriges Bild
+    }, { passive: true });
   }
 
   /* --- Static contact/anmeldung forms -> mailto (no backend) --- */
