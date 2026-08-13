@@ -52,6 +52,11 @@ header.site-header{
   font-size:.88rem;font-weight:500;
 }
 .nav-links a.cta:hover{background:var(--accent-2);color:#fff}
+.lang-switch{display:flex;align-items:center;gap:.35rem;margin-left:.4rem;font-size:.8rem;letter-spacing:.06em;white-space:nowrap}
+.lang-switch a{color:var(--ink-soft);text-decoration:none;transition:color .2s}
+.lang-switch a:hover{color:var(--ink)}
+.lang-switch a.active{color:var(--accent);font-weight:700}
+.lang-switch .sep{color:var(--ink-soft);opacity:.5;margin:0 .05rem}
 .nav-toggle{display:none;background:none;border:none;font-size:1.6rem;color:var(--ink);cursor:pointer}
 
 /* ===== Hero ===== */
@@ -187,6 +192,8 @@ footer.site-footer{background:var(--ink);color:#d8d2c6;margin-top:3rem}
   }
   .nav-links.open{max-height:480px}
   .nav-links a{padding:1rem 6%;border-bottom:1px solid var(--line);width:100%;text-align:center}
+  .nav-links .lang-switch{justify-content:center;width:100%;padding:1.1rem 6%;flex-wrap:wrap}
+  .nav-links .lang-switch a{padding:0;width:auto;border:none}
   .nav-links a.cta{border-radius:0;margin:0}
   .cols-2{grid-template-columns:1fr;gap:2rem}
   .contact-grid{grid-template-columns:1fr;gap:2rem}
